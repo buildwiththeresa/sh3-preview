@@ -26,45 +26,62 @@
       --paper: #efece3;
       --sky: #3f5c7a;
       --tan: #e98a4f;
-      --white: #ffffff;
       --black: #000000;
-      --gold: #d4af37;
       --logo-red: #e31b23;
       --f-display: "Hubot Sans", "Arial Narrow", sans-serif;
       --f-text: "TikTok Sans", system-ui, sans-serif;
-      --pad: clamp(20px, 4vw, 56px);
-      --max: 1080px;
+      --slide-w: 13.333in;
+      --slide-h: 7.5in;
     }
 
     * { box-sizing: border-box; margin: 0; }
-    html { scroll-behavior: smooth; background: var(--ink); }
+    html { background: #111; }
     body {
       font-family: var(--f-text);
       color: var(--ink);
-      background: var(--paper);
-      line-height: 1.5;
+      background: #111;
+      line-height: 1.35;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; }
+    a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
+    p, li { font-size: 14px; }
+    ul { margin: 0; }
 
+    /* One section = one 16:9 slide */
     .page {
-      min-height: 100svh;
-      padding: var(--pad);
-      border-bottom: 3px solid var(--ink);
+      width: min(100vw, calc(100vh * 16 / 9));
+      height: min(100vh, calc(100vw * 9 / 16));
+      margin: 0 auto 12px;
+      padding: 28px 36px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 0;
+      position: relative;
     }
     .page--acid { background: var(--acid); }
     .page--ink { background: var(--ink); color: var(--acid); }
     .page--sky { background: var(--sky); color: var(--paper); }
     .page--paper { background: var(--paper); }
-    .inner { max-width: var(--max); margin: 0 auto; }
+    .inner {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .inner > .grow { flex: 1; min-height: 0; }
 
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: .08em;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
+      flex: none;
     }
     .h1 {
       font-family: var(--f-display);
@@ -72,8 +89,8 @@
       font-stretch: 75%;
       text-transform: uppercase;
       letter-spacing: -.03em;
-      line-height: .9;
-      font-size: clamp(48px, 10vw, 120px);
+      line-height: .88;
+      font-size: clamp(42px, 7.2vw, 92px);
     }
     .h2 {
       font-family: var(--f-display);
@@ -81,63 +98,74 @@
       font-stretch: 75%;
       text-transform: uppercase;
       letter-spacing: -.02em;
-      line-height: .95;
-      font-size: clamp(36px, 6vw, 72px);
-      margin-bottom: 16px;
+      line-height: .92;
+      font-size: clamp(28px, 4.2vw, 48px);
+      margin-bottom: 8px;
+      flex: none;
     }
     .h3 {
       font-family: var(--f-display);
       font-weight: 900;
       font-stretch: 75%;
       text-transform: uppercase;
-      font-size: clamp(22px, 3vw, 32px);
-      margin-bottom: 8px;
+      font-size: 18px;
+      margin-bottom: 4px;
     }
-    .lead { font-size: clamp(18px, 2vw, 24px); max-width: 42ch; }
+    .lead { font-size: 15px; max-width: 52ch; line-height: 1.4; }
     .muted { opacity: .72; }
-    .meta { font-size: 14px; }
+    .meta { font-size: 13px; }
 
-    .toc { display: grid; gap: 10px; margin-top: 40px; max-width: 520px; }
+    .toc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 28px;
+      margin-top: 12px;
+      max-width: none;
+      flex: 1;
+      align-content: start;
+    }
     .toc a {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
-      text-decoration: none;
-      border-bottom: 2px solid currentColor;
-      padding: 10px 0;
+      gap: 12px;
+      border-bottom: 1.5px solid currentColor;
+      padding: 7px 0;
       font-weight: 650;
+      font-size: 14px;
     }
 
     .grid-2 {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: clamp(20px, 4vw, 48px);
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
       align-items: start;
     }
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 12px;
     }
     .grid-4 {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
+      gap: 10px;
     }
-    @media (max-width: 800px) {
-      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
     }
 
     .swatch {
       border: 2px solid var(--ink);
-      min-height: 160px;
+      min-height: 88px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 14px;
+      padding: 10px;
     }
-    .swatch strong { display: block; font-size: 18px; }
-    .swatch span { font-size: 13px; font-variant-numeric: tabular-nums; }
+    .swatch strong { display: block; font-size: 14px; }
+    .swatch span { font-size: 11px; font-variant-numeric: tabular-nums; }
     .swatch--acid { background: var(--acid); color: var(--ink); }
     .swatch--ink { background: var(--ink); color: var(--acid); border-color: var(--acid); }
     .swatch--paper { background: var(--paper); }
@@ -149,21 +177,19 @@
 
     .logo-board {
       background: var(--ink);
-      border: 3px solid var(--ink);
-      padding: 40px;
+      border: 2px solid var(--ink);
+      padding: 16px;
       display: grid;
       place-items: center;
-      min-height: 280px;
+      min-height: 140px;
+      height: 150px;
     }
     .logo-board--light { background: var(--paper); }
     .logo-board--acid { background: var(--acid); }
-    .logo-board img { width: min(240px, 70%); }
+    .logo-board img { width: min(110px, 55%); }
 
-    .type-row {
-      border-top: 2px solid currentColor;
-      padding: 18px 0;
-    }
-    .type-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+    .type-row { border-top: 2px solid currentColor; padding: 10px 0; }
+    .type-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
     .type-display {
       font-family: var(--f-display);
       font-weight: 900;
@@ -171,19 +197,14 @@
       text-transform: uppercase;
       letter-spacing: -.02em;
       line-height: .92;
-      font-size: clamp(40px, 7vw, 84px);
+      font-size: clamp(28px, 4.5vw, 56px);
     }
-    .type-body { font-size: 18px; max-width: 60ch; }
+    .type-body { font-size: 14px; max-width: 62ch; }
 
-    .do-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    @media (max-width: 700px) { .do-grid { grid-template-columns: 1fr; } }
+    .do-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .card {
       border: 2px solid currentColor;
-      padding: 16px;
+      padding: 12px 14px;
       background: color-mix(in oklab, var(--paper) 92%, transparent);
       color: var(--ink);
     }
@@ -193,72 +214,79 @@
       text-transform: uppercase;
       font-stretch: 75%;
       font-weight: 900;
-      margin-bottom: 8px;
-      font-size: 20px;
+      margin-bottom: 6px;
+      font-size: 18px;
     }
     .bad { opacity: .55; text-decoration: line-through; }
 
     .photo-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 12px;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 10px;
+      flex: 1;
+      min-height: 0;
     }
     .photo-grid img {
       width: 100%;
-      height: 220px;
+      height: 100%;
+      max-height: 220px;
       object-fit: cover;
       border: 2px solid var(--ink);
     }
-    .photo-grid .tall { height: 452px; }
-    @media (max-width: 800px) {
-      .photo-grid { grid-template-columns: 1fr; }
-      .photo-grid .tall { height: 240px; }
-    }
+    .photo-grid .tall { max-height: 220px; }
+    .photo-grid > div { display: grid; gap: 10px; min-height: 0; }
+    .photo-grid > div img { max-height: 105px; }
 
     .btn-demo {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 12px 22px;
+      min-height: 40px;
+      padding: 8px 16px;
       font-weight: 650;
-      text-decoration: none;
       border: 2px solid var(--ink);
+      font-size: 13px;
     }
     .btn-demo--fill { background: var(--ink); color: var(--acid); }
     .btn-demo--acid { background: var(--acid); color: var(--ink); }
     .btn-demo--ghost { background: transparent; }
 
-    .voice-list { display: grid; gap: 14px; margin-top: 20px; }
-    .voice-item {
-      border-left: 4px solid var(--acid);
-      padding-left: 14px;
-    }
+    .voice-list { display: grid; gap: 8px; margin-top: 0; }
+    .voice-item { border-left: 3px solid var(--acid); padding-left: 10px; }
     .page--paper .voice-item { border-left-color: var(--ink); }
 
     .why {
       border: 2px solid currentColor;
-      padding: 16px 18px;
-      margin: 20px 0;
-      max-width: 68ch;
+      padding: 10px 12px;
+      margin: 8px 0;
+      max-width: none;
     }
     .why strong {
       display: block;
       font-family: var(--f-display);
       font-stretch: 75%;
       text-transform: uppercase;
-      font-size: 16px;
-      margin-bottom: 6px;
+      font-size: 13px;
+      margin-bottom: 3px;
     }
-    .stack { display: grid; gap: 14px; margin-top: 20px; }
+    .stack { display: grid; gap: 8px; margin-top: 8px; }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+      flex: 1;
+      align-content: start;
+    }
     .feature {
       border: 2px solid currentColor;
-      padding: 16px 18px;
+      padding: 10px;
       display: grid;
-      gap: 6px;
+      gap: 4px;
+      align-content: start;
     }
     .feature .tag {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: .06em;
       text-transform: uppercase;
@@ -268,63 +296,66 @@
       font-family: var(--f-display);
       font-stretch: 75%;
       text-transform: uppercase;
-      font-size: clamp(20px, 2.4vw, 28px);
-      line-height: 1;
+      font-size: 15px;
+      line-height: 1.05;
     }
+    .feature p { font-size: 12px; line-height: 1.3; }
     .rev {
-      display: inline-block;
-      margin-top: 4px;
-      font-size: 13px;
+      display: block;
+      margin-top: 2px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .04em;
+      letter-spacing: .03em;
     }
 
     .footer-note {
-      margin-top: 40px;
-      padding-top: 16px;
-      border-top: 2px solid currentColor;
-      font-size: 13px;
+      margin-top: auto;
+      padding-top: 8px;
+      border-top: 1.5px solid currentColor;
+      font-size: 11px;
       display: flex;
       justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 12px;
+      flex: none;
+    }
+
+    .cover-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      margin-top: auto;
     }
 
     @page {
-      size: A4 landscape;
-      margin: 12mm;
+      size: 13.333in 7.5in;
+      margin: 0;
     }
     @media print {
+      html, body { background: #fff; }
       .page {
+        width: 13.333in;
+        height: 7.5in;
+        margin: 0;
+        padding: 0.42in 0.5in;
         break-after: page;
-        min-height: auto;
-        height: auto;
-        border: 0;
-        padding: 8mm 10mm;
+        page-break-after: always;
+        overflow: hidden;
       }
-      .page:last-child { break-after: auto; }
-      body { background: #fff; }
-      .h1 { font-size: 64px; }
-      .h2 { font-size: 42px; }
-      .photo-grid img { height: 180px; }
-      .photo-grid .tall { height: 372px; }
-      .swatch { min-height: 120px; }
-      .logo-board { min-height: 200px; padding: 24px; }
+      .page:last-child { break-after: auto; page-break-after: auto; }
     }
   </style>
 </head>
 <body>
   <!-- 01 Cover -->
   <section class="page page--acid">
-    <div class="inner" style="min-height: calc(100svh - 2 * var(--pad)); display:flex; flex-direction:column; justify-content:space-between;">
-      <div>
-        <p class="eyebrow">Samarinda Hash House Harriers · Brand Guideline v1.0</p>
-        <h1 class="h1">On On.<br>Brand<br>System.</h1>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;">
-        <img src="./sh3-logo.webp" alt="SH3 logo" width="120" height="120" style="border-radius:50%; background:#000;" />
-        <p class="meta" style="max-width:38ch;">Bukan cuma swatch warna. Guideline ini jelasin <strong>kenapa</strong> redesign, kenapa “On On”, dan kenapa fitur baru ada untuk grow member + revenue.</p>
+    <div class="inner">
+      <p class="eyebrow">Samarinda Hash House Harriers · Brand Guideline v1.1 · 16:9 slides</p>
+      <h1 class="h1">On On.<br>Brand<br>System.</h1>
+      <div class="cover-foot">
+        <img src="./sh3-logo.webp" alt="SH3 logo" width="96" height="96" style="border-radius:50%; background:#000;" />
+        <p class="meta" style="max-width:42ch;">Jelasin <strong>kenapa</strong> redesign (Gen Z), kenapa slogan “On On”, dan kenapa fitur baru dorong member + revenue. Satu section = satu slide.</p>
       </div>
     </div>
   </section>
@@ -358,39 +389,37 @@
   <section class="page page--ink" id="why-redesign">
     <div class="inner">
       <p class="eyebrow">02 · Strategy</p>
-      <h2 class="h2">Kenapa<br>website<br>di-redesign.</h2>
-      <p class="lead" style="margin-top:20px;">Tujuan utama: menarik Gen Z (dan hasher muda) tanpa menghilangkan jiwa hash yang sudah ada sejak akhir 80-an.</p>
-      <div class="stack">
-        <div class="why">
+      <h2 class="h2">Kenapa website di-redesign</h2>
+      <p class="lead">Tarik Gen Z tanpa buang jiwa hash sejak akhir 80-an.</p>
+      <div class="grid-3" style="margin-top:10px;">
+        <div class="why" style="margin:0;">
           <strong>Masalah lama</strong>
-          Portal fungsional, tapi terasa “sistem internal”. Susah jadi pintu masuk orang baru yang scroll Instagram / TikTok. Gen Z putuskan join dalam hitungan detik dari first impression.
+          Portal fungsional tapi terasa sistem internal. Gen Z putuskan join dalam detik dari first impression.
         </div>
-        <div class="why">
+        <div class="why" style="margin:0;">
           <strong>Solusi visual</strong>
-          Landing full-bleed, tipografi keras, kuning acid, foto trail nyata, motion singkat. Terasa event / kultur, bukan form administrasi. Brand test: buang nav, tetap keliatan SH3.
+          Full-bleed, type keras, acid yellow, foto trail, motion singkat. Buang nav, tetap keliatan SH3.
         </div>
-        <div class="why">
+        <div class="why" style="margin:0;">
           <strong>Solusi produk</strong>
-          Satu halaman jelasin guest → member, rewards, referral, donasi per event, sponsorship. CTA Login &amp; Registrasi selalu kelihatan supaya orang yang sudah penasaran langsung masuk funnel.
+          Guest→member, rewards, referral, donasi/event, sponsor. Login &amp; Registrasi selalu kelihatan.
         </div>
       </div>
-      <div class="grid-2" style="margin-top:28px;">
+      <div class="grid-2" style="margin-top:12px;">
         <div>
           <h3 class="h3">Untuk Gen Z</h3>
-          <ul style="padding-left:18px; display:grid; gap:8px;">
-            <li>Scroll-native, bukan PDF panjang</li>
-            <li>Bahasa gaul circle, bukan “syarat &amp; ketentuan” di hero</li>
-            <li>Shareable moment (hero kuat, warna unik)</li>
-            <li>Path jelas: datang guest → daftar → ajak teman</li>
+          <ul style="padding-left:18px; display:grid; gap:4px;">
+            <li>Scroll-native, hero shareable</li>
+            <li>Bahasa circle, bukan legalese</li>
+            <li>Path: guest → daftar → ajak teman</li>
           </ul>
         </div>
         <div>
           <h3 class="h3">Untuk hasher lama</h3>
-          <ul style="padding-left:18px; display:grid; gap:8px;">
-            <li>Logo &amp; “On On” tetap pusat</li>
-            <li>Login Member ke portal yang sudah jalan</li>
-            <li>Event / WhatsApp / Down-Down tidak diganti isinya</li>
-            <li>Donasi &amp; sponsor lebih transparan</li>
+          <ul style="padding-left:18px; display:grid; gap:4px;">
+            <li>Logo &amp; On On tetap pusat</li>
+            <li>Login ke portal yang sudah jalan</li>
+            <li>Event / WA / Down-Down tetap</li>
           </ul>
         </div>
       </div>
@@ -451,43 +480,45 @@
   <section class="page page--sky" id="fitur">
     <div class="inner">
       <p class="eyebrow">05 · Product → revenue</p>
-      <h2 class="h2" style="color:var(--acid);">Fitur baru.<br>Kenapa ada.<br>Dampak uang.</h2>
-      <p class="lead" style="margin-top:16px; max-width:50ch;">Fitur di landing bukan dekorasi. Masing-masing mendorong akuisisi, retensi, atau pemasukan (donasi / sponsor / member aktif).</p>
-      <div class="stack">
+      <h2 class="h2" style="color:var(--acid);">Fitur baru → dampak uang</h2>
+      <p class="lead">Bukan dekorasi. Tiap fitur dorong akuisisi, retensi, atau revenue.</p>
+      <div class="features">
         <article class="feature">
           <span class="tag">Akuisisi</span>
-          <h4>Guest → Member funnel</h4>
-          <p>Why: Gen Z mau coba dulu sebelum commit. Tiga langkah jelas di halaman mengurangi friksi “harus daftar baru boleh datang”.</p>
-          <p class="rev" style="color:var(--acid);">↑ Member baru · ↑ run attendance</p>
+          <h4>Guest → Member</h4>
+          <p>Gen Z mau coba dulu. Funnel 3 langkah turunin friksi daftar.</p>
+          <p class="rev" style="color:var(--acid);">↑ Member · ↑ attendance</p>
         </article>
         <article class="feature">
-          <span class="tag">Retensi + viral</span>
-          <h4>Membership Rewards + Referral</h4>
-          <p>Why: poin, tier Bronze→Platinum, dan ajak teman kasih alasan balik tiap Minggu. Leaderboard / Wall of Fame = status sosial yang Gen Z suka share.</p>
-          <p class="rev" style="color:var(--acid);">↑ Repeat runs · ↑ guest bawa teman · biaya akuisisi turun</p>
+          <span class="tag">Retensi</span>
+          <h4>Rewards + Referral</h4>
+          <p>Poin &amp; tier kasih alasan balik. Leaderboard = status yang di-share.</p>
+          <p class="rev" style="color:var(--acid);">↑ Repeat · ↓ biaya akuisisi</p>
         </article>
         <article class="feature">
-          <span class="tag">Revenue langsung</span>
-          <h4>Donasi per event + Top Donor</h4>
-          <p>Why: orang lebih rela donasi kalau tahu untuk lari mana, progress berapa, dan siapa paling besar (social proof). Sort Terbesar/Terbaru mirip platform crowdfunding yang sudah familiar.</p>
-          <p class="rev" style="color:var(--acid);">↑ Donasi event · ↑ transparansi · ↑ repeat donor</p>
+          <span class="tag">Revenue</span>
+          <h4>Donasi / event</h4>
+          <p>Target jelas + top donor = social proof. Sort terbesar/terbaru familiar.</p>
+          <p class="rev" style="color:var(--acid);">↑ Donasi · ↑ repeat donor</p>
         </article>
         <article class="feature">
-          <span class="tag">Revenue B2B</span>
-          <h4>Sponsorship tiers</h4>
-          <p>Why: brand lokal butuh paket jelas (Platinum→Media Partner) terpisah dari rewards member. Deck di website mempercepat closing tanpa PDF bolak-balik.</p>
-          <p class="rev" style="color:var(--acid);">↑ Sponsor cash / in-kind · ↑ nilai event</p>
+          <span class="tag">B2B</span>
+          <h4>Sponsorship</h4>
+          <p>Paket jelas di web. Closing lebih cepat tanpa PDF bolak-balik.</p>
+          <p class="rev" style="color:var(--acid);">↑ Sponsor cash / in-kind</p>
         </article>
         <article class="feature">
-          <span class="tag">Operasional</span>
-          <h4>Login Member + WhatsApp + Upcoming Events</h4>
-          <p>Why: landing menjual; portal lama tetap otak akun. Event list + Daftar + WA mengurangi “kapan lari / di mana” yang sering bikin orang batal datang.</p>
-          <p class="rev" style="color:var(--acid);">↑ Show-up rate · ↓ churn karena bingung jadwal</p>
+          <span class="tag">Ops</span>
+          <h4>Login + WA + Event</h4>
+          <p>Landing jual; portal tetap akun. Jadwal jelas = lebih banyak datang.</p>
+          <p class="rev" style="color:var(--acid);">↑ Show-up · ↓ churn jadwal</p>
         </article>
-      </div>
-      <div class="why" style="margin-top:24px; border-color:var(--acid);">
-        <strong style="color:var(--acid);">Ringkas model revenue</strong>
-        Lebih banyak muka baru (Gen Z) → lebih banyak member aktif → lebih menarik sponsor → donasi per event lebih cair → rewards/referral menjaga mereka tidak pergi. Website adalah mesin cerita + funnel, bukan cuma brosur.
+        <article class="feature">
+          <span class="tag">Model</span>
+          <h4>Loop revenue</h4>
+          <p>Gen Z masuk → member aktif → sponsor &amp; donasi cair → rewards jaga mereka betah.</p>
+          <p class="rev" style="color:var(--acid);">Website = funnel, bukan brosur</p>
+        </article>
       </div>
       <div class="footer-note"><span>05 · Fitur &amp; revenue</span><span>Grow pack · fund trail</span></div>
     </div>
@@ -498,12 +529,11 @@
     <div class="inner">
       <p class="eyebrow">06 · Logo</p>
       <h2 class="h2">Emblem SH3</h2>
-      <p class="lead muted" style="margin-bottom:16px;">Logo resmi circular: Indonesia banner, Hash House Harriers · Samarinda, siluet hasher di peta Kalimantan (emas &amp; merah).</p>
       <div class="why">
         <strong>Why this logo</strong>
-        Emblem sudah punya sejarah pack. Redesign web tidak ganti identitas: kita naikkan visibility-nya (header besar, footer, donasi). Gen Z masih butuh “badge” yang bisa diingat; hasher lama tetap merasa rumahnya.
+        Emblem sejarah pack tetap. Redesign naikkan visibility (header, footer, donasi). Gen Z dapat badge; hasher lama tetap merasa rumah.
       </div>
-      <div class="grid-3">
+      <div class="grid-3" style="margin-top:8px;">
         <div>
           <p class="type-label">On ink</p>
           <div class="logo-board"><img src="./sh3-logo.webp" alt="Logo SH3 on dark" /></div>
@@ -517,14 +547,14 @@
           <div class="logo-board logo-board--acid"><img src="./sh3-logo.webp" alt="Logo SH3 on acid yellow" /></div>
         </div>
       </div>
-      <div class="grid-2" style="margin-top:32px;">
+      <div class="grid-2" style="margin-top:10px;">
         <div>
           <h3 class="h3">Clear space</h3>
-          <p>Jaga ruang kosong minimal setinggi huruf “S” di “SAMARINDA”. Di header web, logo 44–56px + nama chapter.</p>
+          <p>Minimal setinggi “S” di SAMARINDA. Header: 44–56px + nama chapter.</p>
         </div>
         <div>
           <h3 class="h3">Pairing nama</h3>
-          <p>Wordmark: <strong>SAMARINDA HASH / HOUSE HARRIERS</strong>. Slogan “On On” melengkapi, tidak mengganti nama di posisi brand.</p>
+          <p>Wordmark <strong>SAMARINDA HASH / HOUSE HARRIERS</strong>. “On On” melengkapi, tidak mengganti brand.</p>
         </div>
       </div>
       <div class="footer-note"><span>06 · Logo</span><span>Gunakan file hi-res untuk cetak</span></div>

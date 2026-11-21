@@ -291,9 +291,26 @@
       flex-wrap: wrap;
     }
 
+    @page {
+      size: A4 landscape;
+      margin: 12mm;
+    }
     @media print {
-      .page { break-after: page; min-height: auto; border: 0; }
+      .page {
+        break-after: page;
+        min-height: auto;
+        height: auto;
+        border: 0;
+        padding: 8mm 10mm;
+      }
+      .page:last-child { break-after: auto; }
       body { background: #fff; }
+      .h1 { font-size: 64px; }
+      .h2 { font-size: 42px; }
+      .photo-grid img { height: 180px; }
+      .photo-grid .tall { height: 372px; }
+      .swatch { min-height: 120px; }
+      .logo-board { min-height: 200px; padding: 24px; }
     }
   </style>
 </head>

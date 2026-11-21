@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SH3 Brand Guideline · Samarinda Hash House Harriers</title>
+  <link rel="icon" href="../favicon.webp" type="image/webp" />
+  <style>
+    @font-face {
+      font-family: "Hubot Sans";
+      font-weight: 900;
+      font-stretch: 75%;
+      font-display: swap;
+      src: url("../_site/assets/72fbef9324689e9c165e23e62f7efaa92a0e2c37f484d446e8d3cde8ea40159e/aedb7d4c3f4ee78e7d1727d24830fce4e1e359fdbf4e0079677d9ab73ecf84c1-original.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "TikTok Sans";
+      font-weight: 380 900;
+      font-display: swap;
+      src: url("../_site/assets/de5c13090c387fe95c5f6fe3752f8a4ab1fd887aa58b89be9779bf0a3c6b0c60/9f0f94969baf313993082d961eecaf7eedfd4ef7d4904bbd12a22a346e774ea5-original.woff2") format("woff2");
+    }
+
+    :root {
+      --acid: #fdfe02;
+      --ink: #1a0e07;
+      --paper: #efece3;
+      --sky: #3f5c7a;
+      --tan: #e98a4f;
+      --white: #ffffff;
+      --black: #000000;
+      --gold: #d4af37;
+      --logo-red: #e31b23;
+      --f-display: "Hubot Sans", "Arial Narrow", sans-serif;
+      --f-text: "TikTok Sans", system-ui, sans-serif;
+      --pad: clamp(20px, 4vw, 56px);
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; background: var(--ink); }
+    body {
+      font-family: var(--f-text);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .page {
+      min-height: 100svh;
+      padding: var(--pad);
+      border-bottom: 3px solid var(--ink);
+    }
+    .page--acid { background: var(--acid); }
+    .page--ink { background: var(--ink); color: var(--acid); }
+    .page--sky { background: var(--sky); color: var(--paper); }
+    .page--paper { background: var(--paper); }
+    .inner { max-width: var(--max); margin: 0 auto; }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .h1 {
+      font-family: var(--f-display);
+      font-weight: 900;
+      font-stretch: 75%;
+      text-transform: uppercase;
+      letter-spacing: -.03em;
+      line-height: .9;
+      font-size: clamp(48px, 10vw, 120px);
+    }
+    .h2 {
+      font-family: var(--f-display);
+      font-weight: 900;
+      font-stretch: 75%;
+      text-transform: uppercase;
+      letter-spacing: -.02em;
+      line-height: .95;
+      font-size: clamp(36px, 6vw, 72px);
+      margin-bottom: 16px;
+    }
+    .h3 {
+      font-family: var(--f-display);
+      font-weight: 900;
+      font-stretch: 75%;
+      text-transform: uppercase;
+      font-size: clamp(22px, 3vw, 32px);
+      margin-bottom: 8px;
+    }
+    .lead { font-size: clamp(18px, 2vw, 24px); max-width: 42ch; }
+    .muted { opacity: .72; }
+    .meta { font-size: 14px; }
+
+    .toc { display: grid; gap: 10px; margin-top: 40px; max-width: 520px; }
+    .toc a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      text-decoration: none;
+      border-bottom: 2px solid currentColor;
+      padding: 10px 0;
+      font-weight: 650;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: clamp(20px, 4vw, 48px);
+      align-items: start;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 800px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    .swatch {
+      border: 2px solid var(--ink);
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 14px;
+    }
+    .swatch strong { display: block; font-size: 18px; }
+    .swatch span { font-size: 13px; font-variant-numeric: tabular-nums; }
+    .swatch--acid { background: var(--acid); color: var(--ink); }
+    .swatch--ink { background: var(--ink); color: var(--acid); border-color: var(--acid); }
+    .swatch--paper { background: var(--paper); }
+    .swatch--sky { background: var(--sky); color: var(--paper); }
+    .swatch--tan { background: var(--tan); color: var(--ink); }
+    .swatch--black { background: var(--black); color: var(--acid); border-color: var(--acid); }
+    .swatch--gold { background: linear-gradient(145deg, #f0d56a, #b8922a); color: var(--ink); }
+    .swatch--red { background: var(--logo-red); color: #fff; }
+
+    .logo-board {
+      background: var(--ink);
+      border: 3px solid var(--ink);
+      padding: 40px;
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+    }
+    .logo-board--light { background: var(--paper); }
+    .logo-board--acid { background: var(--acid); }
+    .logo-board img { width: min(240px, 70%); }
+
+    .type-row {
+      border-top: 2px solid currentColor;
+      padding: 18px 0;
+    }
+    .type-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+    .type-display {
+      font-family: var(--f-display);
+      font-weight: 900;
+      font-stretch: 75%;
+      text-transform: uppercase;
+      letter-spacing: -.02em;
+      line-height: .92;
+      font-size: clamp(40px, 7vw, 84px);
+    }
+    .type-body { font-size: 18px; max-width: 60ch; }
+
+    .do-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 700px) { .do-grid { grid-template-columns: 1fr; } }
+    .card {
+      border: 2px solid currentColor;
+      padding: 16px;
+      background: color-mix(in oklab, var(--paper) 92%, transparent);
+      color: var(--ink);
+    }
+    .page--ink .card { background: color-mix(in oklab, var(--ink) 70%, #000); color: var(--acid); }
+    .card h4 {
+      font-family: var(--f-display);
+      text-transform: uppercase;
+      font-stretch: 75%;
+      font-weight: 900;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+    .bad { opacity: .55; text-decoration: line-through; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 12px;
+    }
+    .photo-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border: 2px solid var(--ink);
+    }
+    .photo-grid .tall { height: 452px; }
+    @media (max-width: 800px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-grid .tall { height: 240px; }
+    }
+
+    .btn-demo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      font-weight: 650;
+      text-decoration: none;
+      border: 2px solid var(--ink);
+    }
+    .btn-demo--fill { background: var(--ink); color: var(--acid); }
+    .btn-demo--acid { background: var(--acid); color: var(--ink); }
+    .btn-demo--ghost { background: transparent; }
+
+    .voice-list { display: grid; gap: 14px; margin-top: 20px; }
+    .voice-item {
+      border-left: 4px solid var(--acid);
+      padding-left: 14px;
+    }
+    .page--paper .voice-item { border-left-color: var(--ink); }
+
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 2px solid currentColor;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media print {
+      .page { break-after: page; min-height: auto; border: 0; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 01 Cover -->
+  <section class="page page--acid">
+    <div class="inner" style="min-height: calc(100svh - 2 * var(--pad)); display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <p class="eyebrow">Samarinda Hash House Harriers · Brand Guideline v1.0</p>
+        <h1 class="h1">On On.<br>Brand<br>System.</h1>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;">
+        <img src="./sh3-logo.webp" alt="SH3 logo" width="120" height="120" style="border-radius:50%; background:#000;" />
+        <p class="meta" style="max-width:34ch;">Visual identity untuk landing SH3: acid yellow, ink, trail photography, dan tipografi condensed display.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Contents -->
+  <section class="page page--paper" id="isi">
+    <div class="inner">
+      <p class="eyebrow">01 · Isi</p>
+      <h2 class="h2">Isi guideline</h2>
+      <nav class="toc" aria-label="Daftar isi">
+        <a href="#esensi"><span>02 Brand essence</span><span>04</span></a>
+        <a href="#logo"><span>03 Logo</span><span>05</span></a>
+        <a href="#warna"><span>04 Warna</span><span>07</span></a>
+        <a href="#tipe"><span>05 Tipografi</span><span>08</span></a>
+        <a href="#foto"><span>06 Fotografi</span><span>09</span></a>
+        <a href="#suara"><span>07 Suara &amp; copy</span><span>10</span></a>
+        <a href="#ui"><span>08 UI &amp; komponen</span><span>11</span></a>
+        <a href="#doa"><span>09 Do &amp; don’t</span><span>12</span></a>
+      </nav>
+      <div class="footer-note">
+        <span>SH3 Brand Guideline v1.0 · Nov 2026</span>
+        <span>Berdasarkan website preview SH3</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Essence -->
+  <section class="page page--ink" id="esensi">
+    <div class="inner">
+      <p class="eyebrow">02 · Essence</p>
+      <h2 class="h2">A drinking club<br>with a running<br>problem.</h2>
+      <div class="grid-2" style="margin-top:36px;">
+        <div>
+          <p class="lead">SH3 adalah chapter Hash House Harriers di Samarinda: trail Minggu, tepung, circle Down-Down, guest welcome.</p>
+          <p class="muted" style="margin-top:16px; max-width:42ch;">Brand terasa becek, ramah, keras tapi tidak sombong. Visualnya berani (acid on ink), bahasa sehari-hari, tanpa jargon marketing.</p>
+        </div>
+        <div class="voice-list">
+          <div class="voice-item"><strong>Berani</strong><p class="muted">Kontras tinggi. Judul besar. Tidak malu kuning.</p></div>
+          <div class="voice-item"><strong>Lokal</strong><p class="muted">Samarinda, Mahakam, Kalimantan. Bukan template luar negeri.</p></div>
+          <div class="voice-item"><strong>Circle</strong><p class="muted">Guest boleh. Pack jaga. On On lebih penting dari pace.</p></div>
+          <div class="voice-item"><strong>Langsung</strong><p class="muted">CTA jelas: Registrasi, Login Member, Daftar, Donasi.</p></div>
+        </div>
+      </div>
+      <div class="footer-note"><span>02 · Brand essence</span><span>On On!</span></div>
+    </div>
+  </section>
+
+  <!-- 04 Logo -->
+  <section class="page page--paper" id="logo">
+    <div class="inner">
+      <p class="eyebrow">03 · Logo</p>
+      <h2 class="h2">Emblem SH3</h2>
+      <p class="lead muted" style="margin-bottom:28px;">Logo resmi circular: Indonesia banner, Hash House Harriers · Samarinda, siluet hasher di peta Kalimantan (emas &amp; merah).</p>
+      <div class="grid-3">
+        <div>
+          <p class="type-label">On ink</p>
+          <div class="logo-board"><img src="./sh3-logo.webp" alt="Logo SH3 on dark" /></div>
+        </div>
+        <div>
+          <p class="type-label">On paper</p>
+          <div class="logo-board logo-board--light"><img src="./sh3-logo.webp" alt="Logo SH3 on paper" /></div>
+        </div>
+        <div>
+          <p class="type-label">On acid</p>
+          <div class="logo-board logo-board--acid"><img src="./sh3-logo.webp" alt="Logo SH3 on acid yellow" /></div>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:32px;">
+        <div>
+          <h3 class="h3">Clear space</h3>
+          <p>Jaga ruang kosong minimal setinggi huruf “S” di “SAMARINDA” di sekitar emblem. Di header web, logo 44–56px dengan nama chapter di samping.</p>
+        </div>
+        <div>
+          <h3 class="h3">Pairing nama</h3>
+          <p>Wordmark web: <strong>SAMARINDA HASH / HOUSE HARRIERS</strong> (dua baris, Hubot Sans Black condensed). Jangan ganti jadi slogan lain di posisi brand.</p>
+        </div>
+      </div>
+      <div class="footer-note"><span>03 · Logo</span><span>Gunakan file SVG/PNG hi-res untuk cetak</span></div>
+    </div>
+  </section>
+
+  <!-- 05 Colors -->
+  <section class="page page--paper" id="warna">
+    <div class="inner">
+      <p class="eyebrow">04 · Warna</p>
+      <h2 class="h2">Palette</h2>
+      <p class="lead muted" style="margin-bottom:24px;">Dari CSS tokens website. Acid + Ink adalah pasangan utama. Paper untuk body. Sky untuk section gelap / chart.</p>
+      <p class="type-label" style="margin-bottom:10px;">Core (digital)</p>
+      <div class="grid-4" style="margin-bottom:28px;">
+        <div class="swatch swatch--acid"><div><strong>Acid</strong><span>#FDFE02 · --acid</span></div></div>
+        <div class="swatch swatch--ink"><div><strong>Ink</strong><span>#1A0E07 · --ink</span></div></div>
+        <div class="swatch swatch--paper"><div><strong>Paper</strong><span>#EFECE3 · --paper</span></div></div>
+        <div class="swatch swatch--sky"><div><strong>Sky</strong><span>#3F5C7A · --sky</span></div></div>
+      </div>
+      <p class="type-label" style="margin-bottom:10px;">Support</p>
+      <div class="grid-4">
+        <div class="swatch swatch--tan"><div><strong>Tan</strong><span>#E98A4F · --tan</span></div></div>
+        <div class="swatch swatch--black"><div><strong>Black</strong><span>#000000 · logo plate</span></div></div>
+        <div class="swatch swatch--gold"><div><strong>Logo gold</strong><span>~#D4AF37 · emblem</span></div></div>
+        <div class="swatch swatch--red"><div><strong>Logo red</strong><span>#E31B23 · map core</span></div></div>
+      </div>
+      <p style="margin-top:20px; max-width:60ch;">Aturan: teks di atas Acid selalu Ink. Teks di atas Ink/Sky selalu Acid atau Paper. Jangan pakai ungu/neon lain sebagai aksen utama.</p>
+      <div class="footer-note"><span>04 · Warna</span><span>Kontras tinggi = default</span></div>
+    </div>
+  </section>
+
+  <!-- 06 Type -->
+  <section class="page page--acid" id="tipe">
+    <div class="inner">
+      <p class="eyebrow">05 · Tipografi</p>
+      <h2 class="h2">Huruf keras.<br>Badan jelas.</h2>
+      <div class="type-row">
+        <p class="type-label">Display · Hubot Sans Black / 75% stretch</p>
+        <p class="type-display">Hash House Harriers</p>
+        <p class="meta" style="margin-top:8px;">Judul section, hero, ticker. Uppercase. Tracking ketat. Line-height ~0.9–0.95.</p>
+      </div>
+      <div class="type-row">
+        <p class="type-label">Body · TikTok Sans</p>
+        <p class="type-body">Tiap Minggu kita lari trail di Samarinda dan alam Kaltim, terus lanjut circle Down-Down. Guest welcome. Tidak ada jam finish. Ikuti tepung saja.</p>
+        <p class="meta" style="margin-top:8px;">Body 16–19px. Lead lebih besar. Weight 560–700 untuk nav &amp; CTA.</p>
+      </div>
+      <div class="type-row">
+        <p class="type-label">Fallback</p>
+        <p>Display: Arial Narrow, sans-serif · Body: system-ui, sans-serif</p>
+      </div>
+      <div class="footer-note"><span>05 · Tipografi</span><span>Jangan pakai Inter / Roboto sebagai display</span></div>
+    </div>
+  </section>
+
+  <!-- 07 Photo -->
+  <section class="page page--paper" id="foto">
+    <div class="inner">
+      <p class="eyebrow">06 · Fotografi</p>
+      <h2 class="h2">Trail nyata.<br>Bukan stock gym.</h2>
+      <p class="lead muted" style="margin-bottom:24px;">Foto menunjukkan hutan, lumpur, pack, jembatan, sungai, circle. Cahaya natural. Sedikit grain/saturasi boleh, filter “influencer” jangan.</p>
+      <div class="photo-grid">
+        <img class="tall" src="./photos/sh3-trail-pack.jpg" alt="Pack di trail" />
+        <div style="display:grid; gap:12px;">
+          <img src="./photos/sh3-mud.jpg" alt="Trail basah" />
+          <img src="./photos/sh3-circle.jpg" alt="Circle" />
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:24px;">
+        <div>
+          <h3 class="h3">Hero</h3>
+          <p>Full-bleed misty forest / trail. Overlay type Acid. Diamond window (clip-path) sebagai aksen motion, jangan menutup kata penting.</p>
+        </div>
+        <div>
+          <h3 class="h3">Crop</h3>
+          <p>Object-position sekitar 38% vertikal untuk wajah/pack. Diamond photos di leaderboard boleh; hero jangan diganti collage kartu.</p>
+        </div>
+      </div>
+      <div class="footer-note"><span>06 · Fotografi</span><span>Sumber: dokumentasi SH3 / trail pack</span></div>
+    </div>
+  </section>
+
+  <!-- 08 Voice -->
+  <section class="page page--sky" id="suara">
+    <div class="inner">
+      <p class="eyebrow">07 · Suara</p>
+      <h2 class="h2" style="color:var(--acid);">Bahasa circle.</h2>
+      <div class="grid-2" style="margin-top:28px;">
+        <div>
+          <h3 class="h3" style="color:var(--acid);">Pakai</h3>
+          <ul style="padding-left:18px; display:grid; gap:8px;">
+            <li>On On! · Down-Down · Guest welcome</li>
+            <li>Kalimat pendek, aktif</li>
+            <li>Bahasa Indonesia hangat, campur istilah hash</li>
+            <li>“Daftar”, “Login Member”, “Donasi sekarang”</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="h3" style="color:var(--acid);">Hindari</h3>
+          <ul style="padding-left:18px; display:grid; gap:8px;">
+            <li>Em dash panjang dan copy AI generic</li>
+            <li>“Revolutionize your fitness journey”</li>
+            <li>Bahasa korporat kaku di hero</li>
+            <li>Emoji berlebihan di UI utama</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top:28px; background:color-mix(in oklab, var(--ink) 35%, transparent); color:var(--paper); border-color:var(--acid);">
+        <h4 style="color:var(--acid);">Contoh hero support</h4>
+        <p>“Mud, mates &amp; Mahakam air · Down-Down · Ayo join circle · Guests welcome · On On!”</p>
+      </div>
+      <div class="footer-note"><span>07 · Suara &amp; copy</span><span>ID first</span></div>
+    </div>
+  </section>
+
+  <!-- 09 UI -->
+  <section class="page page--paper" id="ui">
+    <div class="inner">
+      <p class="eyebrow">08 · UI</p>
+      <h2 class="h2">Komponen</h2>
+      <div class="grid-2" style="margin-top:24px;">
+        <div>
+          <h3 class="h3">Buttons</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 24px;">
+            <span class="btn-demo btn-demo--fill">Registrasi</span>
+            <span class="btn-demo btn-demo--ghost">Login Member</span>
+            <span class="btn-demo btn-demo--acid">Donasi Sekarang</span>
+          </div>
+          <p>Radius 0. Border tegas 1.5–3px. Min-height 44–52px. Primary = Ink fill + Acid text.</p>
+        </div>
+        <div>
+          <h3 class="h3">Patterns</h3>
+          <ul style="padding-left:18px; display:grid; gap:8px; margin-top:12px;">
+            <li>Ticker bar Acid/Ink penuh lebar</li>
+            <li>Section heads: H2 display + 1 kalimat support</li>
+            <li>Donasi per event: progress bar Acid di atas Paper</li>
+            <li>Leaderboard diamond crop boleh; kartu donasi kotak tegas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-note"><span>08 · UI</span><span>--radius: 0</span></div>
+    </div>
+  </section>
+
+  <!-- 10 Do don't -->
+  <section class="page page--ink" id="doa">
+    <div class="inner">
+      <p class="eyebrow">09 · Do &amp; don’t</p>
+      <h2 class="h2">Jaga pack.</h2>
+      <div class="do-grid" style="margin-top:28px;">
+        <div class="card">
+          <h4>Do</h4>
+          <ul style="padding-left:18px; display:grid; gap:8px;">
+            <li>Logo utuh, tidak stretch</li>
+            <li>Acid + Ink sebagai pasangan utama</li>
+            <li>Foto trail lokal / pack nyata</li>
+            <li>CTA Login Member selalu terlihat</li>
+            <li>Donasi &amp; top donor per event</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Don’t</h4>
+          <ul style="padding-left:18px; display:grid; gap:8px;">
+            <li class="bad">Recolor logo jadi ungu / pastel</li>
+            <li class="bad">Hero packed dengan stats &amp; chips</li>
+            <li class="bad">Rounded-full pills &amp; soft purple UI</li>
+            <li class="bad">Stock foto treadmill</li>
+            <li class="bad">Menutup “HOUSE” dengan diamond besar</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:48px; display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;">
+        <div>
+          <p class="eyebrow">Kontak</p>
+          <p>WhatsApp 0811-588-338</p>
+          <p>@samarinda_hashhouseharriers</p>
+          <p style="margin-top:12px;"><a href="../">← Kembali ke website</a></p>
+        </div>
+        <img src="./sh3-logo.webp" alt="" width="88" height="88" style="border-radius:50%; background:#000;" />
+      </div>
+      <div class="footer-note"><span>09 · Do &amp; don’t</span><span>SH3 · On On!</span></div>
+    </div>
+  </section>
+</body>
+</html>

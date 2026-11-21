@@ -1,7 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import markup from "../content/homeMarkup.html?raw";
 import { initMotion } from "../motion/initMotion";
+
+/** Root-absolute /brand/… paths break on GitHub Pages (/sh3-preview/). */
+function withAssetBase(html: string) {
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+  if (base === "/") return html;
+  return html.replace(/\b(src|href|poster)="\/(?!\/)/g, `$1="${base}`);
+}
 
 /**
  * Similar source reconstruction of the SH3 / Ridge Runners production homepage.
@@ -13,6 +20,7 @@ import { initMotion } from "../motion/initMotion";
 export default function HomePage() {
   const rootRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
+  const html = useMemo(() => withAssetBase(markup), []);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -174,7 +182,7 @@ export default function HomePage() {
     <div
       ref={rootRef}
       data-ready={ready ? "true" : "false"}
-      dangerouslySetInnerHTML={{ __html: markup }}
+      dangerouslySetInnerHTML={{ __html: html }}
     />
   );
 }

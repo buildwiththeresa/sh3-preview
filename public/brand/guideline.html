@@ -236,6 +236,50 @@
     }
     .page--paper .voice-item { border-left-color: var(--ink); }
 
+    .why {
+      border: 2px solid currentColor;
+      padding: 16px 18px;
+      margin: 20px 0;
+      max-width: 68ch;
+    }
+    .why strong {
+      display: block;
+      font-family: var(--f-display);
+      font-stretch: 75%;
+      text-transform: uppercase;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .stack { display: grid; gap: 14px; margin-top: 20px; }
+    .feature {
+      border: 2px solid currentColor;
+      padding: 16px 18px;
+      display: grid;
+      gap: 6px;
+    }
+    .feature .tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      opacity: .7;
+    }
+    .feature h4 {
+      font-family: var(--f-display);
+      font-stretch: 75%;
+      text-transform: uppercase;
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1;
+    }
+    .rev {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
     .footer-note {
       margin-top: 40px;
       padding-top: 16px;
@@ -263,7 +307,7 @@
       </div>
       <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;">
         <img src="./sh3-logo.webp" alt="SH3 logo" width="120" height="120" style="border-radius:50%; background:#000;" />
-        <p class="meta" style="max-width:34ch;">Visual identity untuk landing SH3: acid yellow, ink, trail photography, dan tipografi condensed display.</p>
+        <p class="meta" style="max-width:38ch;">Bukan cuma swatch warna. Guideline ini jelasin <strong>kenapa</strong> redesign, kenapa “On On”, dan kenapa fitur baru ada untuk grow member + revenue.</p>
       </div>
     </div>
   </section>
@@ -274,49 +318,174 @@
       <p class="eyebrow">01 · Isi</p>
       <h2 class="h2">Isi guideline</h2>
       <nav class="toc" aria-label="Daftar isi">
-        <a href="#esensi"><span>02 Brand essence</span><span>04</span></a>
-        <a href="#logo"><span>03 Logo</span><span>05</span></a>
-        <a href="#warna"><span>04 Warna</span><span>07</span></a>
-        <a href="#tipe"><span>05 Tipografi</span><span>08</span></a>
-        <a href="#foto"><span>06 Fotografi</span><span>09</span></a>
-        <a href="#suara"><span>07 Suara &amp; copy</span><span>10</span></a>
-        <a href="#ui"><span>08 UI &amp; komponen</span><span>11</span></a>
-        <a href="#doa"><span>09 Do &amp; don’t</span><span>12</span></a>
+        <a href="#why-redesign"><span>02 Kenapa redesign</span><span>03</span></a>
+        <a href="#onon"><span>03 Kenapa “On On”</span><span>04</span></a>
+        <a href="#esensi"><span>04 Brand essence</span><span>05</span></a>
+        <a href="#fitur"><span>05 Fitur &amp; revenue</span><span>06</span></a>
+        <a href="#logo"><span>06 Logo</span><span>07</span></a>
+        <a href="#warna"><span>07 Warna (why)</span><span>08</span></a>
+        <a href="#tipe"><span>08 Tipografi (why)</span><span>09</span></a>
+        <a href="#foto"><span>09 Fotografi (why)</span><span>10</span></a>
+        <a href="#suara"><span>10 Suara &amp; copy</span><span>11</span></a>
+        <a href="#ui"><span>11 UI &amp; komponen</span><span>12</span></a>
+        <a href="#doa"><span>12 Do &amp; don’t</span><span>13</span></a>
       </nav>
       <div class="footer-note">
-        <span>SH3 Brand Guideline v1.0 · Nov 2026</span>
-        <span>Berdasarkan website preview SH3</span>
+        <span>SH3 Brand Guideline v1.1 · Nov 2026</span>
+        <span>Strategy + visual dari website baru</span>
       </div>
     </div>
   </section>
 
-  <!-- 03 Essence -->
-  <section class="page page--ink" id="esensi">
+  <!-- Why redesign -->
+  <section class="page page--ink" id="why-redesign">
     <div class="inner">
-      <p class="eyebrow">02 · Essence</p>
+      <p class="eyebrow">02 · Strategy</p>
+      <h2 class="h2">Kenapa<br>website<br>di-redesign.</h2>
+      <p class="lead" style="margin-top:20px;">Tujuan utama: menarik Gen Z (dan hasher muda) tanpa menghilangkan jiwa hash yang sudah ada sejak akhir 80-an.</p>
+      <div class="stack">
+        <div class="why">
+          <strong>Masalah lama</strong>
+          Portal fungsional, tapi terasa “sistem internal”. Susah jadi pintu masuk orang baru yang scroll Instagram / TikTok. Gen Z putuskan join dalam hitungan detik dari first impression.
+        </div>
+        <div class="why">
+          <strong>Solusi visual</strong>
+          Landing full-bleed, tipografi keras, kuning acid, foto trail nyata, motion singkat. Terasa event / kultur, bukan form administrasi. Brand test: buang nav, tetap keliatan SH3.
+        </div>
+        <div class="why">
+          <strong>Solusi produk</strong>
+          Satu halaman jelasin guest → member, rewards, referral, donasi per event, sponsorship. CTA Login &amp; Registrasi selalu kelihatan supaya orang yang sudah penasaran langsung masuk funnel.
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:28px;">
+        <div>
+          <h3 class="h3">Untuk Gen Z</h3>
+          <ul style="padding-left:18px; display:grid; gap:8px;">
+            <li>Scroll-native, bukan PDF panjang</li>
+            <li>Bahasa gaul circle, bukan “syarat &amp; ketentuan” di hero</li>
+            <li>Shareable moment (hero kuat, warna unik)</li>
+            <li>Path jelas: datang guest → daftar → ajak teman</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="h3">Untuk hasher lama</h3>
+          <ul style="padding-left:18px; display:grid; gap:8px;">
+            <li>Logo &amp; “On On” tetap pusat</li>
+            <li>Login Member ke portal yang sudah jalan</li>
+            <li>Event / WhatsApp / Down-Down tidak diganti isinya</li>
+            <li>Donasi &amp; sponsor lebih transparan</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-note"><span>02 · Kenapa redesign</span><span>Attract Gen Z · keep the pack</span></div>
+    </div>
+  </section>
+
+  <!-- On On slogan -->
+  <section class="page page--acid" id="onon">
+    <div class="inner">
+      <p class="eyebrow">03 · Sonic / verbal mark</p>
+      <h2 class="h2">Kenapa<br>“On On”.</h2>
+      <p class="lead" style="margin-top:16px; max-width:48ch;">Supaya orang dengar “On On” langsung ingat SH3. Bukan cuma sapaan hash global. Kita pakai sebagai slogan merek lokal.</p>
+      <div class="stack">
+        <div class="why">
+          <strong>Apa itu</strong>
+          “On On” adalah teriakan klasik Hash House Harriers: lanjut trail, ikut tepung, jangan berhenti di circle. Di dunia hash, ini sudah dikenal. Di Samarinda, kita jadikan signature SH3.
+        </div>
+        <div class="why">
+          <strong>Kenapa diulang di mana-mana</strong>
+          Hero ticker, footer, WhatsApp opener, CTA soft. Pengulangan = memory. Mirip jingle: semakin sering terdengar di konteks SH3, semakin cepat otak tautkan suara → chapter Samarinda.
+        </div>
+        <div class="why">
+          <strong>Hasil yang diinginkan</strong>
+          Di trail, di chat, di sponsor deck: bilang “On On” = orang tahu ini pack SH3. Brand verbal yang murah, kuat, dan tidak perlu diterjemahkan.
+        </div>
+      </div>
+      <p style="margin-top:28px; font-family:var(--f-display); font-stretch:75%; font-weight:900; text-transform:uppercase; font-size:clamp(28px,5vw,48px); line-height:1;">Dengar “On On” → ingat SH3.</p>
+      <div class="footer-note"><span>03 · Slogan</span><span>Verbal identity</span></div>
+    </div>
+  </section>
+
+  <!-- Essence -->
+  <section class="page page--paper" id="esensi">
+    <div class="inner">
+      <p class="eyebrow">04 · Essence</p>
       <h2 class="h2">A drinking club<br>with a running<br>problem.</h2>
       <div class="grid-2" style="margin-top:36px;">
         <div>
-          <p class="lead">SH3 adalah chapter Hash House Harriers di Samarinda: trail Minggu, tepung, circle Down-Down, guest welcome.</p>
-          <p class="muted" style="margin-top:16px; max-width:42ch;">Brand terasa becek, ramah, keras tapi tidak sombong. Visualnya berani (acid on ink), bahasa sehari-hari, tanpa jargon marketing.</p>
+          <p class="lead">SH3 = chapter Hash House Harriers di Samarinda: trail Minggu, tepung, circle Down-Down, guest welcome.</p>
+          <div class="why" style="margin-top:20px;">
+            <strong>Why this tone</strong>
+            Gen Z curiga sama brand yang “terlalu bersih”. Kita pilih becek + ramah: jujur soal lumpur dan circle, tapi tetap mudah join. Keras di visual, hangat di ajakan.
+          </div>
         </div>
         <div class="voice-list">
-          <div class="voice-item"><strong>Berani</strong><p class="muted">Kontras tinggi. Judul besar. Tidak malu kuning.</p></div>
-          <div class="voice-item"><strong>Lokal</strong><p class="muted">Samarinda, Mahakam, Kalimantan. Bukan template luar negeri.</p></div>
-          <div class="voice-item"><strong>Circle</strong><p class="muted">Guest boleh. Pack jaga. On On lebih penting dari pace.</p></div>
-          <div class="voice-item"><strong>Langsung</strong><p class="muted">CTA jelas: Registrasi, Login Member, Daftar, Donasi.</p></div>
+          <div class="voice-item"><strong>Berani</strong><p class="muted">Kontras tinggi. Judul besar. Tidak malu kuning. Why: beda dari website olahraga generik.</p></div>
+          <div class="voice-item"><strong>Lokal</strong><p class="muted">Samarinda, Mahakam, Kaltim. Why: pride tempat = alasan orang betah &amp; share.</p></div>
+          <div class="voice-item"><strong>Circle</strong><p class="muted">Guest boleh. Pack jaga. Why: turunkan takut “klub eksklusif”.</p></div>
+          <div class="voice-item"><strong>Langsung</strong><p class="muted">CTA jelas. Why: traffic tanpa convert = rugi redesign.</p></div>
         </div>
       </div>
-      <div class="footer-note"><span>02 · Brand essence</span><span>On On!</span></div>
+      <div class="footer-note"><span>04 · Brand essence</span><span>On On!</span></div>
     </div>
   </section>
 
-  <!-- 04 Logo -->
+  <!-- Features & revenue -->
+  <section class="page page--sky" id="fitur">
+    <div class="inner">
+      <p class="eyebrow">05 · Product → revenue</p>
+      <h2 class="h2" style="color:var(--acid);">Fitur baru.<br>Kenapa ada.<br>Dampak uang.</h2>
+      <p class="lead" style="margin-top:16px; max-width:50ch;">Fitur di landing bukan dekorasi. Masing-masing mendorong akuisisi, retensi, atau pemasukan (donasi / sponsor / member aktif).</p>
+      <div class="stack">
+        <article class="feature">
+          <span class="tag">Akuisisi</span>
+          <h4>Guest → Member funnel</h4>
+          <p>Why: Gen Z mau coba dulu sebelum commit. Tiga langkah jelas di halaman mengurangi friksi “harus daftar baru boleh datang”.</p>
+          <p class="rev" style="color:var(--acid);">↑ Member baru · ↑ run attendance</p>
+        </article>
+        <article class="feature">
+          <span class="tag">Retensi + viral</span>
+          <h4>Membership Rewards + Referral</h4>
+          <p>Why: poin, tier Bronze→Platinum, dan ajak teman kasih alasan balik tiap Minggu. Leaderboard / Wall of Fame = status sosial yang Gen Z suka share.</p>
+          <p class="rev" style="color:var(--acid);">↑ Repeat runs · ↑ guest bawa teman · biaya akuisisi turun</p>
+        </article>
+        <article class="feature">
+          <span class="tag">Revenue langsung</span>
+          <h4>Donasi per event + Top Donor</h4>
+          <p>Why: orang lebih rela donasi kalau tahu untuk lari mana, progress berapa, dan siapa paling besar (social proof). Sort Terbesar/Terbaru mirip platform crowdfunding yang sudah familiar.</p>
+          <p class="rev" style="color:var(--acid);">↑ Donasi event · ↑ transparansi · ↑ repeat donor</p>
+        </article>
+        <article class="feature">
+          <span class="tag">Revenue B2B</span>
+          <h4>Sponsorship tiers</h4>
+          <p>Why: brand lokal butuh paket jelas (Platinum→Media Partner) terpisah dari rewards member. Deck di website mempercepat closing tanpa PDF bolak-balik.</p>
+          <p class="rev" style="color:var(--acid);">↑ Sponsor cash / in-kind · ↑ nilai event</p>
+        </article>
+        <article class="feature">
+          <span class="tag">Operasional</span>
+          <h4>Login Member + WhatsApp + Upcoming Events</h4>
+          <p>Why: landing menjual; portal lama tetap otak akun. Event list + Daftar + WA mengurangi “kapan lari / di mana” yang sering bikin orang batal datang.</p>
+          <p class="rev" style="color:var(--acid);">↑ Show-up rate · ↓ churn karena bingung jadwal</p>
+        </article>
+      </div>
+      <div class="why" style="margin-top:24px; border-color:var(--acid);">
+        <strong style="color:var(--acid);">Ringkas model revenue</strong>
+        Lebih banyak muka baru (Gen Z) → lebih banyak member aktif → lebih menarik sponsor → donasi per event lebih cair → rewards/referral menjaga mereka tidak pergi. Website adalah mesin cerita + funnel, bukan cuma brosur.
+      </div>
+      <div class="footer-note"><span>05 · Fitur &amp; revenue</span><span>Grow pack · fund trail</span></div>
+    </div>
+  </section>
+
+  <!-- Logo -->
   <section class="page page--paper" id="logo">
     <div class="inner">
-      <p class="eyebrow">03 · Logo</p>
+      <p class="eyebrow">06 · Logo</p>
       <h2 class="h2">Emblem SH3</h2>
-      <p class="lead muted" style="margin-bottom:28px;">Logo resmi circular: Indonesia banner, Hash House Harriers · Samarinda, siluet hasher di peta Kalimantan (emas &amp; merah).</p>
+      <p class="lead muted" style="margin-bottom:16px;">Logo resmi circular: Indonesia banner, Hash House Harriers · Samarinda, siluet hasher di peta Kalimantan (emas &amp; merah).</p>
+      <div class="why">
+        <strong>Why this logo</strong>
+        Emblem sudah punya sejarah pack. Redesign web tidak ganti identitas: kita naikkan visibility-nya (header besar, footer, donasi). Gen Z masih butuh “badge” yang bisa diingat; hasher lama tetap merasa rumahnya.
+      </div>
       <div class="grid-3">
         <div>
           <p class="type-label">On ink</p>
@@ -334,23 +503,27 @@
       <div class="grid-2" style="margin-top:32px;">
         <div>
           <h3 class="h3">Clear space</h3>
-          <p>Jaga ruang kosong minimal setinggi huruf “S” di “SAMARINDA” di sekitar emblem. Di header web, logo 44–56px dengan nama chapter di samping.</p>
+          <p>Jaga ruang kosong minimal setinggi huruf “S” di “SAMARINDA”. Di header web, logo 44–56px + nama chapter.</p>
         </div>
         <div>
           <h3 class="h3">Pairing nama</h3>
-          <p>Wordmark web: <strong>SAMARINDA HASH / HOUSE HARRIERS</strong> (dua baris, Hubot Sans Black condensed). Jangan ganti jadi slogan lain di posisi brand.</p>
+          <p>Wordmark: <strong>SAMARINDA HASH / HOUSE HARRIERS</strong>. Slogan “On On” melengkapi, tidak mengganti nama di posisi brand.</p>
         </div>
       </div>
-      <div class="footer-note"><span>03 · Logo</span><span>Gunakan file SVG/PNG hi-res untuk cetak</span></div>
+      <div class="footer-note"><span>06 · Logo</span><span>Gunakan file hi-res untuk cetak</span></div>
     </div>
   </section>
 
-  <!-- 05 Colors -->
+  <!-- Colors -->
   <section class="page page--paper" id="warna">
     <div class="inner">
-      <p class="eyebrow">04 · Warna</p>
+      <p class="eyebrow">07 · Warna</p>
       <h2 class="h2">Palette</h2>
-      <p class="lead muted" style="margin-bottom:24px;">Dari CSS tokens website. Acid + Ink adalah pasangan utama. Paper untuk body. Sky untuk section gelap / chart.</p>
+      <p class="lead muted" style="margin-bottom:16px;">Dari CSS tokens website. Acid + Ink pasangan utama. Paper body. Sky section gelap.</p>
+      <div class="why">
+        <strong>Why Acid + Ink</strong>
+        Kuning acid agresif di feed HP. Gen Z scroll cepat: kontras ekstrem menghentikan ibu jari. Ink hampir hitam menjaga kesan “club keras”, bukan pastel lifestyle app. Paper hangat biar body text tidak menyakitkan mata.
+      </div>
       <p class="type-label" style="margin-bottom:10px;">Core (digital)</p>
       <div class="grid-4" style="margin-bottom:28px;">
         <div class="swatch swatch--acid"><div><strong>Acid</strong><span>#FDFE02 · --acid</span></div></div>
@@ -365,40 +538,48 @@
         <div class="swatch swatch--gold"><div><strong>Logo gold</strong><span>~#D4AF37 · emblem</span></div></div>
         <div class="swatch swatch--red"><div><strong>Logo red</strong><span>#E31B23 · map core</span></div></div>
       </div>
-      <p style="margin-top:20px; max-width:60ch;">Aturan: teks di atas Acid selalu Ink. Teks di atas Ink/Sky selalu Acid atau Paper. Jangan pakai ungu/neon lain sebagai aksen utama.</p>
-      <div class="footer-note"><span>04 · Warna</span><span>Kontras tinggi = default</span></div>
+      <p style="margin-top:20px; max-width:60ch;">Aturan: teks di atas Acid = Ink. Di atas Ink/Sky = Acid atau Paper. Jangan aksen ungu/neon lain: itu mengaburkan “ini SH3”.</p>
+      <div class="footer-note"><span>07 · Warna</span><span>Stop the scroll</span></div>
     </div>
   </section>
 
-  <!-- 06 Type -->
+  <!-- Type -->
   <section class="page page--acid" id="tipe">
     <div class="inner">
-      <p class="eyebrow">05 · Tipografi</p>
+      <p class="eyebrow">08 · Tipografi</p>
       <h2 class="h2">Huruf keras.<br>Badan jelas.</h2>
+      <div class="why">
+        <strong>Why condensed display</strong>
+        Huruf sempit + black weight = poster trail / jersey energy. Terasa olahraga sosial, bukan SaaS. Gen Z baca dari HP: satu kata “HASH” memenuhi layar = memorable screenshot.
+      </div>
       <div class="type-row">
         <p class="type-label">Display · Hubot Sans Black / 75% stretch</p>
         <p class="type-display">Hash House Harriers</p>
-        <p class="meta" style="margin-top:8px;">Judul section, hero, ticker. Uppercase. Tracking ketat. Line-height ~0.9–0.95.</p>
+        <p class="meta" style="margin-top:8px;">Judul, hero, ticker. Uppercase. Tracking ketat. Line-height ~0.9–0.95.</p>
       </div>
       <div class="type-row">
         <p class="type-label">Body · TikTok Sans</p>
         <p class="type-body">Tiap Minggu kita lari trail di Samarinda dan alam Kaltim, terus lanjut circle Down-Down. Guest welcome. Tidak ada jam finish. Ikuti tepung saja.</p>
-        <p class="meta" style="margin-top:8px;">Body 16–19px. Lead lebih besar. Weight 560–700 untuk nav &amp; CTA.</p>
+        <p class="meta" style="margin-top:8px;">Why TikTok Sans: nama + feel dekat dunia short-video Gen Z, tetap legible untuk paragraf panjang.</p>
       </div>
       <div class="type-row">
         <p class="type-label">Fallback</p>
-        <p>Display: Arial Narrow, sans-serif · Body: system-ui, sans-serif</p>
+        <p>Display: Arial Narrow · Body: system-ui · Jangan Inter/Roboto sebagai display (terlalu “AI default”).</p>
       </div>
-      <div class="footer-note"><span>05 · Tipografi</span><span>Jangan pakai Inter / Roboto sebagai display</span></div>
+      <div class="footer-note"><span>08 · Tipografi</span><span>Poster energy</span></div>
     </div>
   </section>
 
-  <!-- 07 Photo -->
+  <!-- Photo -->
   <section class="page page--paper" id="foto">
     <div class="inner">
-      <p class="eyebrow">06 · Fotografi</p>
+      <p class="eyebrow">09 · Fotografi</p>
       <h2 class="h2">Trail nyata.<br>Bukan stock gym.</h2>
-      <p class="lead muted" style="margin-bottom:24px;">Foto menunjukkan hutan, lumpur, pack, jembatan, sungai, circle. Cahaya natural. Sedikit grain/saturasi boleh, filter “influencer” jangan.</p>
+      <p class="lead muted" style="margin-bottom:16px;">Hutan, lumpur, pack, jembatan, sungai, circle. Cahaya natural.</p>
+      <div class="why">
+        <strong>Why real trail photos</strong>
+        Stock treadmill membunuh kredibilitas hash. Foto lokal = bukti “ini beneran Samarinda”. Gen Z deteksi fake visual cepat; dokumentasi pack membangun trust sebelum mereka datang guest.
+      </div>
       <div class="photo-grid">
         <img class="tall" src="./photos/sh3-trail-pack.jpg" alt="Pack di trail" />
         <div style="display:grid; gap:12px;">
@@ -409,38 +590,42 @@
       <div class="grid-2" style="margin-top:24px;">
         <div>
           <h3 class="h3">Hero</h3>
-          <p>Full-bleed misty forest / trail. Overlay type Acid. Diamond window (clip-path) sebagai aksen motion, jangan menutup kata penting.</p>
+          <p>Full-bleed trail + type Acid. Diamond motion sebagai ciri, jangan nutup kata penting. Why: satu viewport = satu cerita brand.</p>
         </div>
         <div>
           <h3 class="h3">Crop</h3>
-          <p>Object-position sekitar 38% vertikal untuk wajah/pack. Diamond photos di leaderboard boleh; hero jangan diganti collage kartu.</p>
+          <p>Object-position ~38% untuk wajah/pack. Why: fokus manusia di pack, bukan cuma scenery kosong.</p>
         </div>
       </div>
-      <div class="footer-note"><span>06 · Fotografi</span><span>Sumber: dokumentasi SH3 / trail pack</span></div>
+      <div class="footer-note"><span>09 · Fotografi</span><span>Proof of place</span></div>
     </div>
   </section>
 
-  <!-- 08 Voice -->
+  <!-- Voice -->
   <section class="page page--sky" id="suara">
     <div class="inner">
-      <p class="eyebrow">07 · Suara</p>
+      <p class="eyebrow">10 · Suara</p>
       <h2 class="h2" style="color:var(--acid);">Bahasa circle.</h2>
+      <div class="why" style="border-color:var(--acid); margin-top:16px;">
+        <strong style="color:var(--acid);">Why this voice</strong>
+        Gen Z skip teks korporat. Kita pakai istilah hash + Indonesia hangat supaya terdengar teman di circle, bukan panitia. “On On” diulang sampai jadi refleks merek.
+      </div>
       <div class="grid-2" style="margin-top:28px;">
         <div>
           <h3 class="h3" style="color:var(--acid);">Pakai</h3>
           <ul style="padding-left:18px; display:grid; gap:8px;">
             <li>On On! · Down-Down · Guest welcome</li>
             <li>Kalimat pendek, aktif</li>
-            <li>Bahasa Indonesia hangat, campur istilah hash</li>
+            <li>ID hangat + istilah hash</li>
             <li>“Daftar”, “Login Member”, “Donasi sekarang”</li>
           </ul>
         </div>
         <div>
           <h3 class="h3" style="color:var(--acid);">Hindari</h3>
           <ul style="padding-left:18px; display:grid; gap:8px;">
-            <li>Em dash panjang dan copy AI generic</li>
+            <li>Em dash &amp; copy AI generic</li>
             <li>“Revolutionize your fitness journey”</li>
-            <li>Bahasa korporat kaku di hero</li>
+            <li>Bahasa korporat di hero</li>
             <li>Emoji berlebihan di UI utama</li>
           </ul>
         </div>
@@ -449,15 +634,19 @@
         <h4 style="color:var(--acid);">Contoh hero support</h4>
         <p>“Mud, mates &amp; Mahakam air · Down-Down · Ayo join circle · Guests welcome · On On!”</p>
       </div>
-      <div class="footer-note"><span>07 · Suara &amp; copy</span><span>ID first</span></div>
+      <div class="footer-note"><span>10 · Suara &amp; copy</span><span>ID first · On On always</span></div>
     </div>
   </section>
 
-  <!-- 09 UI -->
+  <!-- UI -->
   <section class="page page--paper" id="ui">
     <div class="inner">
-      <p class="eyebrow">08 · UI</p>
+      <p class="eyebrow">11 · UI</p>
       <h2 class="h2">Komponen</h2>
+      <div class="why">
+        <strong>Why square, high contrast UI</strong>
+        Radius 0 + border tebal = poster / stempel pack, bukan fintech soft-UI. Tombol besar memudahkan jempol Gen Z dan menegaskan “ini ajakan join”, bukan setting app.
+      </div>
       <div class="grid-2" style="margin-top:24px;">
         <div>
           <h3 class="h3">Buttons</h3>
@@ -466,26 +655,26 @@
             <span class="btn-demo btn-demo--ghost">Login Member</span>
             <span class="btn-demo btn-demo--acid">Donasi Sekarang</span>
           </div>
-          <p>Radius 0. Border tegas 1.5–3px. Min-height 44–52px. Primary = Ink fill + Acid text.</p>
+          <p>Primary = Ink + Acid text. Secondary outline. Donasi Acid fill saat butuh highlight revenue.</p>
         </div>
         <div>
           <h3 class="h3">Patterns</h3>
           <ul style="padding-left:18px; display:grid; gap:8px; margin-top:12px;">
-            <li>Ticker bar Acid/Ink penuh lebar</li>
-            <li>Section heads: H2 display + 1 kalimat support</li>
-            <li>Donasi per event: progress bar Acid di atas Paper</li>
-            <li>Leaderboard diamond crop boleh; kartu donasi kotak tegas</li>
+            <li>Ticker “On On” biar slogan nempel</li>
+            <li>Satu job per section (hero bersih)</li>
+            <li>Donasi per event + top donor</li>
+            <li>Login Member selalu di header</li>
           </ul>
         </div>
       </div>
-      <div class="footer-note"><span>08 · UI</span><span>--radius: 0</span></div>
+      <div class="footer-note"><span>11 · UI</span><span>--radius: 0</span></div>
     </div>
   </section>
 
-  <!-- 10 Do don't -->
+  <!-- Do don't -->
   <section class="page page--ink" id="doa">
     <div class="inner">
-      <p class="eyebrow">09 · Do &amp; don’t</p>
+      <p class="eyebrow">12 · Do &amp; don’t</p>
       <h2 class="h2">Jaga pack.</h2>
       <div class="do-grid" style="margin-top:28px;">
         <div class="card">
@@ -518,7 +707,7 @@
         </div>
         <img src="./sh3-logo.webp" alt="" width="88" height="88" style="border-radius:50%; background:#000;" />
       </div>
-      <div class="footer-note"><span>09 · Do &amp; don’t</span><span>SH3 · On On!</span></div>
+      <div class="footer-note"><span>12 · Do &amp; don’t</span><span>SH3 · On On!</span></div>
     </div>
   </section>
 </body>

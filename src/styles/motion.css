@@ -1,0 +1,62 @@
+/* Extra motion helpers used by initMotion (production CSS already covers slot/faq). */
+
+html.motion [data-reveal],
+html.motion [data-tilt] {
+  will-change: transform, opacity;
+}
+
+html.motion .poster,
+html.motion .step,
+html.motion .person,
+html.motion [data-rise] {
+  will-change: transform, opacity;
+}
+
+.site-header[data-scrolled="true"] {
+  box-shadow: 0 10px 28px color-mix(in oklab, var(--ink) 18%, transparent);
+}
+
+.ticker__track {
+  gap: 0;
+}
+
+html.motion .hero__stack .fill {
+  transform-origin: 50% 50%;
+}
+
+html.motion .gallery__grid,
+html.motion [data-tilt] {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+html.motion .split-char,
+html.motion .split-word,
+html.motion .split-line-inner {
+  will-change: transform, opacity;
+}
+
+/* Lenis recommends this for smoother scrolling */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion [data-reveal],
+  html.motion [data-tilt] {
+    opacity: 1 !important;
+  }
+}
